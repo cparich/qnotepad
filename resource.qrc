@@ -1,0 +1,11 @@
+<RCC>
+    <qresource prefix="/">
+        <file>resources/icons/color-picker.png</file>
+        <file>resources/icons/eraser.png</file>
+        <file>resources/icons/syringe.png</file>
+        <file>resources/icons/autograf.png</file>
+        <file>resources/icons/left_round.png</file>
+        <file>resources/icons/right_round.png</file>
+        <file>resources/icons/whole_hand.png</file>
+    </qresource>
+</RCC>
