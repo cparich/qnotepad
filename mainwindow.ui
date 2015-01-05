@@ -18,29 +18,100 @@
     <item row="0" column="0" colspan="3">
      <widget class="PenWidget" name="widget" native="true"/>
     </item>
-    <item row="1" column="0">
-     <widget class="QPushButton" name="pushButton">
+    <item row="1" column="1">
+     <widget class="QPushButton" name="pushButton_3">
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
       <property name="text">
-       <string>PushButton</string>
+       <string>Clear</string>
+      </property>
+      <property name="flat">
+       <bool>false</bool>
       </property>
      </widget>
     </item>
     <item row="1" column="2">
-     <widget class="QPushButton" name="pushButton_2">
+     <widget class="QToolButton" name="toolButton_2">
       <property name="text">
-       <string>PushButton</string>
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset resource="resource.qrc">
+        <normaloff>:/resources/icons/right_round.png</normaloff>:/resources/icons/right_round.png</iconset>
       </property>
      </widget>
     </item>
-    <item row="1" column="1">
-     <widget class="QPushButton" name="pushButton_3">
+    <item row="1" column="0">
+     <widget class="QToolButton" name="toolButton">
       <property name="text">
-       <string>PushButton</string>
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset resource="resource.qrc">
+        <normaloff>:/resources/icons/left_round.png</normaloff>:/resources/icons/left_round.png</iconset>
       </property>
      </widget>
     </item>
    </layout>
   </widget>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>RightToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionPen"/>
+   <addaction name="actionEraser"/>
+   <addaction name="actionTouchToggle"/>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>711</width>
+     <height>25</height>
+    </rect>
+   </property>
+  </widget>
+  <action name="actionPen">
+   <property name="icon">
+    <iconset resource="resource.qrc">
+     <normaloff>:/resources/icons/autograf.png</normaloff>:/resources/icons/autograf.png</iconset>
+   </property>
+   <property name="text">
+    <string>Pen</string>
+   </property>
+   <property name="toolTip">
+    <string>Change the current pen</string>
+   </property>
+  </action>
+  <action name="actionEraser">
+   <property name="icon">
+    <iconset resource="resource.qrc">
+     <normaloff>:/resources/icons/eraser.png</normaloff>:/resources/icons/eraser.png</iconset>
+   </property>
+   <property name="text">
+    <string>Eraser</string>
+   </property>
+  </action>
+  <action name="actionTouchToggle">
+   <property name="icon">
+    <iconset resource="resource.qrc">
+     <normaloff>:/resources/icons/whole_hand.png</normaloff>:/resources/icons/whole_hand.png</iconset>
+   </property>
+   <property name="text">
+    <string>TouchToggle</string>
+   </property>
+   <property name="toolTip">
+    <string>Enable or disable touch writing</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <customwidgets>
@@ -51,6 +122,8 @@
    <container>1</container>
   </customwidget>
  </customwidgets>
- <resources/>
+ <resources>
+  <include location="resource.qrc"/>
+ </resources>
  <connections/>
 </ui>

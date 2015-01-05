@@ -1,0 +1,4 @@
+syntax: glob
+draw-test.pro.user*
+Makefile
+draw-test

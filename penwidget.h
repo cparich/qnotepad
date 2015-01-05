@@ -3,32 +3,44 @@
 
 #include <QWidget>
 #include <QMouseEvent>
+#include <unordered_map>
 
 class PenWidget : public QWidget
 {
-    Q_OBJECT
+	Q_OBJECT
 
-    int old_x, old_y;
-    int xpos, ypos;
+	std::unordered_map<int,std::tuple<int,int,int,int>> input_map;
 
-    QPixmap *pixmap;
+	bool useTouch = false;
+
+	QPixmap *pixmap;
+
+	void TouchBegin(QEvent *e);
+	void TouchUpdate(QEvent *e);
+	void TouchEnd(QEvent* e);
+	void TouchCancel(QEvent *e);
 
 public:
-    explicit PenWidget(QWidget *parent = 0);
-    ~PenWidget();
+	explicit PenWidget(QWidget *parent = 0);
+	~PenWidget();
+
+	bool AcceptTouch(bool touch);
+
+	void DrawSegment(int x1, int y1, int x2, int y2, qreal pressure = 1);
+
+	void clearImage();
 
 signals:
 
 public slots:
-    void paintEvent(QPaintEvent *event);
-    void mouseMoveEvent(QMouseEvent *event);
-    void mousePressEvent(QMouseEvent *event);
-    void mouseReleaseEvent(QMouseEvent *event);
-    void resizeEvent(QResizeEvent *event);
+	void update();
 
-    void tabletEvent(QTabletEvent *event);
+	void paintEvent(QPaintEvent *event);
+	void resizeEvent(QResizeEvent *event);
 
-    bool event(QEvent *_event);
+	void tabletEvent(QTabletEvent *event);
+
+	bool event(QEvent *_event);
 };
 
 #endif // PENWIDGET_H
